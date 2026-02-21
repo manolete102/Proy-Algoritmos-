@@ -1,0 +1,22 @@
+Explicacion del Proyecto - Proy-Algoritmos
+===========================================
+
+Este proyecto tiene como objetivo implementar y analizar distintos algoritmos
+fundamentales en el area de ciencias de la computacion.
+
+Cada algoritmo incluido en este repositorio esta documentado con su respectiva
+explicacion, analisis de complejidad temporal y espacial, y ejemplos de uso.
+
+El proposito es comprender el funcionamiento interno de los algoritmos,
+comparar su eficiencia y aplicar las mejores practicas de programacion.
+
+Contenido:
+- Implementaciones de algoritmos clasicos
+- Analisis de complejidad (Big O)
+- Ejemplos practicos y casos de prueba
+
+Herramientas utilizadas:
+- Git y GitHub para control de versiones
+- Editor de codigo / IDE
+
+Repositorio: https://github.com/manolete102/Proy-Algoritmos-.git
