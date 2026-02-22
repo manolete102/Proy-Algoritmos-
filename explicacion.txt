@@ -1,22 +1,78 @@
-Explicacion del Proyecto - Proy-Algoritmos
-===========================================
+Instrucciones para el examen.
+Realicen un código en C++ que con base en el proceso de Kaprekar para 4 cifras, determine lo
+siguiente:
 
-Este proyecto tiene como objetivo implementar y analizar distintos algoritmos
-fundamentales en el area de ciencias de la computacion.
+1. El número de iteraciones necesarias para llegar a la constante de Kaprekar (6174), a partir
+de cualquier número de 4 cifras.
 
-Cada algoritmo incluido en este repositorio esta documentado con su respectiva
-explicacion, analisis de complejidad temporal y espacial, y ejemplos de uso.
+2. El número máximo de iteraciones requeridas para llegar a 6174, considerando todos los
+números de 4 cifras posibles.
+Además, realicen lo siguiente:
 
-El proposito es comprender el funcionamiento interno de los algoritmos,
-comparar su eficiencia y aplicar las mejores practicas de programacion.
+3. Determinen la complejidad temporal y de espacio para el proceso de Kaprekar para 4
+cifras. Deben agregar su respuesta como comentarios al final del código.
+Especificaciones de la entrada:
 
-Contenido:
-- Implementaciones de algoritmos clasicos
-- Analisis de complejidad (Big O)
-- Ejemplos practicos y casos de prueba
+4. Para el primer punto, pidan al usuario la entrada y validen que únicamente se puedan
+introducir números enteros de 4 cifras. Si el usuario ingresa cualquier otra cosa, debe
+avisar del error y permitir una nueva lectura.
+Sobre el código
 
-Herramientas utilizadas:
-- Git y GitHub para control de versiones
-- Editor de codigo / IDE
+Consideren los siguientes puntos:
+• Todo el código debe estar debidamente comentado.
+• No olviden incluir los comentarios de cabecera y la firma de honor de la UDEM. Recuerden
+que los comentarios de cabecera son:
+o // Título del código
+o // Autores
+o // Fecha de elaboración
+o // Materia: Análisis y diseño de algoritmos (o ADA si prefieren)
+o // Fuente (en este caso solo podría aplicar CPP Reference).
 
-Repositorio: https://github.com/manolete102/Proy-Algoritmos-.git
+En caso de ser omitidos, la calificación del examen será de 1 (escala 100).
+• Agrupen en funciones todo lo que consideren necesario, procurando siempre mantener la
+simplicidad, organización y legibilidad del código.
+• Sólo pueden utilizar recursos dentro de la biblioteca estándar de C++. Aunque pueden
+apoyarse de cualquier código o material (como la documentación en
+https://en.cppreference.com/w/) que hayan usado durante estas semanas de clase.
+• Para el ordenamiento del número, pueden utilizar alguna de las que programaron en clase,
+o que ya conozcan de cursos anteriores (en cuyo caso también tendrán que explicarla),
+evidentemente, opten por la más eficiente.
+• No está permitido obtener y/o copiar código a través de herramientas de IA Generativa. En
+caso de incurrir en este punto, se asignará una calificación de 0 en el examen parcial a los
+involucrados.
+
+
+Sobre la evaluación:
+• Además del código funcional, deberán dar una breve explicación del mismo ante el
+profesor para poder obtener la calificación del examen parcial.
+• La presentación será contra reloj. La duración se determinará en función del número de
+equipos y el orden asignado será aleatorio.
+• Es enteramente su responsabilidad conocer a detalle su código (ya que ustedes mismos lo
+realizarán) y, por tanto, responder de manera convincente y coherente a las preguntas que
+se les hagan. Si algún miembro del equipo comete alguna equivocación, repercute para
+ambos (en caso de estar en pareja).
+• En caso de incurrir en contradicciones o errores en la explicación que provengan de una
+mala planeación, código defectuoso por copia o plagio, se asignará una calificación de 0
+en el examen parcial a los involucrados.
+
+Importante:
+• Suban su código a Blackboard con el siguiente esquema:
+ApellidoIntegrante1_ApellidoIntegrante2_EP1.cpp (si trabajan en parejas), o
+ApellidoPaterno_ApellidoMaterno_EP1.cpp (si trabajan de forma individual)
+Si no cumplen con el esquema de nombre solicitado, se penalizará con 20 puntos sobre la
+calificación.
+
+• La fecha límite de entrega será el domingo 22 de febrero de 2026 a las 11:59pm. Cualquier
+entrega fuera de plazo no será evaluada y se asignará una calificación de 0 en el examen
+parcial a los involucrados
+
+• La fecha de presentación ante el profesor será el lunes 23 de febrero de 2026 durante la
+sesión de clase.
+
+• No presentar ante el profesor también provoca una calificación de 0 en el examen parcial
+para los involucrados
+
+• +10 extra (escala 100) en su examen, si tanto su código, como su presentación están en
+inglés
+
+• Revisen la rúbrica en Blackboard para más detalle
