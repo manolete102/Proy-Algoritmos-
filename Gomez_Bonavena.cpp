@@ -1,3 +1,9 @@
+// Materia: Análisis y Diseño de Algoritmos
+// Examen Primer Parcial 
+// Carrera :ITC 
+// Fecha: 22 de Febrero de 2026
+// Profesor: Dr. Eduardo Emmanuel Rodríguez López
+// Autores Manuel bonavena Perez y carlos rodrigo gomez gonzalez
 #include <iostream>
 #include <string>
 
@@ -112,7 +118,7 @@ int pedirNumero(){
         }
 
         if(!esNumero){
-            cout << "Error: solo se permiten numeros enteros." << endl;
+            cout << "Error: solo se permiten numeros enteros positivos." << endl;
             continue;
         }
 
@@ -141,26 +147,39 @@ int pedirNumero(){
 
 int main(){
     cout << "=== Proceso de Kaprekar para 4 cifras ===" << endl;
-    cout << endl;
 
-    // --- Punto 1: iteraciones para un numero dado ---
-    int numero = pedirNumero();
-    int iteraciones = contarIteraciones(numero);
+    string opcion;
 
-    cout << endl;
-    cout << "El numero " << numero << " llega a 6174 en "
-         << iteraciones << " iteraciones." << endl;
+    // ciclo principal: permite al usuario probar varios numeros o salir
+    do {
+        cout << endl;
 
-    // mostramos el proceso paso a paso para que se vea claro
-    cout << "Proceso:" << endl;
-    int actual = numero;
-    int paso = 1;
-    while(actual != 6174){
-        int siguiente = pasoKaprekar(actual);
-        cout << "  Paso " << paso << ": " << actual << " -> " << siguiente << endl;
-        actual = siguiente;
-        paso++;
-    }
+        // --- Punto 1: iteraciones para un numero dado ---
+        int numero = pedirNumero();
+        int iteraciones = contarIteraciones(numero);
+
+        cout << endl;
+        cout << "El numero " << numero << " llega a 6174 en "
+             << iteraciones << " iteraciones." << endl;
+
+        // mostramos el proceso paso a paso para que se vea claro
+        cout << "Proceso:" << endl;
+        int actual = numero;
+        int paso = 1;
+        while(actual != 6174){
+            int siguiente = pasoKaprekar(actual);
+            cout << "  Paso " << paso << ": " << actual << " -> " << siguiente << endl;
+            actual = siguiente;
+            paso++;
+        }
+
+        cout << endl;
+
+        // preguntamos si quiere probar con otro numero o salir
+        cout << "Quieres probar con otro numero? (s/n): ";
+        getline(cin, opcion);
+
+    } while(opcion == "s" || opcion == "S");
 
     cout << endl;
 
