@@ -1,0 +1,67 @@
+Explicación general del programa
+¿Qué es el proceso de Kaprekar?
+Tomas un número de 4 cifras, ordenas sus dígitos de mayor a menor (número grande) y de menor a mayor (número chico), restas grande - chico, y repites. Siempre llegas a 6174 (la constante de Kaprekar).
+
+Ejemplo con 3524:
+
+
+5432 - 2345 = 3087
+8730 - 0378 = 8352
+8532 - 2358 = 6174  ← llegamos en 3 pasos
+Funciones del programa (en orden)
+1. insertionSort (línea 15)
+Ordena los 4 dígitos de menor a mayor
+¿Por qué insertion sort? Porque para arreglos de 4 elementos es el más eficiente y simple. No tiene sentido usar merge sort o quicksort para solo 4 datos.
+¿Cómo funciona? Va tomando cada elemento y lo inserta en su posición correcta comparando hacia atrás.
+2. separarDigitos (línea 31)
+Extrae los 4 dígitos de un número usando % 10 (módulo) y / 10 (división entera)
+Ejemplo: 3524 → {3, 2, 0, 1} ... no, 3524 → {3, 5, 2, 4}
+Punto clave: si el número es menor a 1000 (como 999), los dígitos quedan {0, 9, 9, 9} — maneja ceros a la izquierda automáticamente
+3. armarNumero (línea 41)
+Lo inverso de separarDigitos: toma {1, 2, 3, 4} y regresa 1234
+Usa resultado = resultado * 10 + digito para ir construyendo el número
+4. pasoKaprekar (línea 53) — el corazón del programa
+Separa dígitos → los ordena → arma el menor (ascendente) → arma el mayor (descendente al revés) → resta mayor - menor
+5. contarIteraciones (línea 74)
+Ciclo while que aplica pasoKaprekar hasta llegar a 6174
+Cuenta cuántas veces lo hizo
+6. todosDigitosIguales (línea 89)
+Detecta números como 1111, 2222, etc. que dan 0 al restar y nunca llegan a 6174
+7. pedirNumero (línea 101) — validación
+Lee como string (no como int) para poder detectar letras, negativos, etc.
+Valida: que sean solo dígitos, que sea de 4 cifras, que no sea repdigit
+8. main (línea 148)
+Punto 1: pide número, muestra iteraciones y proceso paso a paso, pregunta si quiere otro
+Punto 2: recorre los 9000 números (1000-9999) y encuentra el máximo de iteraciones → siempre da 
+
+Complejidad (lo que deben saber decir)
+Temporal: O(1) — todo es constante porque:
+
+El arreglo siempre es de 4 (insertion sort en 4 elementos = constante)
+Kaprekar converge en máximo 7 iteraciones (demostrado matemáticamente)
+El ciclo del punto 2 recorre exactamente 9000 números (fijo, no crece)
+Espacial: O(1) — porque:
+
+CLAVEEEE :: Solo usamos arreglos de 4 enteros y variables sueltas
+No hay memoria dinámica (no usamos new, ni vectores que crezcan)
+
+IMPORTANTEEEE ENTENDER :: La constante de Kaprekar es 6174
+El máximo de iteraciones es 7 (ejemplo: 1004)
+Los únicos números que NO funcionan son los repdigits (1111, 2222... 9999) porque dan 0
+Se usa insertion sort porque es eficiente para n pequeño (n=4)
+La entrada se lee como string para validar correctamente (si usáramos cin >> int, letras romperían el programa)
+
+
+Preguntas probables:
+
+"¿Por qué usaron insertion sort?" - Porque para 4 elementos es eficiente, es O(n^2) pero con n=4 es prácticamente constante. Es simple y la vimos en clase.
+
+"¿Cómo funciona pasoKaprekar?" - Separa los 4 dígitos, los ordena de menor a mayor, arma el número menor, luego al revés arma el mayor, y resta mayor - menor.
+
+"¿Qué pasa con números como 1000 donde sale 999?" - Se trata como 0999 (4 dígitos con cero al inicio). La función separarDigitos lo maneja automáticamente porque extrae dígito por dígito con % 10.
+
+"¿Por qué la complejidad es O(1)?" - Porque el arreglo siempre es de 4 elementos (constante), las iteraciones de Kaprekar son máximo 7 (constante), y el rango de números es fijo (1000-9999).
+
+"¿Por qué excluyen los repdigits (1111, 2222...)?" - Porque mayor - menor = 0, nunca llegan a 6174.
+
+"¿Cómo validan la entrada?" - Leemos como string, checamos que cada carácter sea dígito (0-9), convertimos a entero manualmente, y verificamos que esté entre 1000 y 9999.
